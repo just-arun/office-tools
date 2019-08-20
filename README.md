@@ -9,3 +9,8 @@ vuepress run dev
 ```sh
 vuepress generate
 ```
+we could also use the start script, using the following comment
+
+```sh
+chmod 744 start && ./start
+```
