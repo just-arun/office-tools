@@ -1,0 +1,31 @@
+#!/bin/bash
+read -p "Enter Your Option (D for developement server, B for building static pages, P for push to github): " option
+
+if [ "$option" == "D" ];
+then
+    echo "starting developement server"
+    sudo vuepress dev
+elif [ "$option" == "B" ] 
+then
+    echo "generating static html pages"
+    sudo vuepress build
+elif [ "$option" == "P" ]
+then
+    read -p "enter your comment: " comm
+    echo "Push static html pages to Github Master baranch"
+    git init
+    git add .
+    git commit -m "$comm"
+    git remote add origin https://github.com/just-arun/office-tools.git
+    git push -u origin master
+else
+    echo "---command not found---";
+    echo "Here are the list of availabel commands"
+    echo "D for starting dev server"
+    echo "B for building static html pages"
+    echo "B for building static html pages"
+    echo "P for Push static html pages to Github Master baranch"
+fi
+
+
+

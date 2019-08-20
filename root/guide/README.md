@@ -79,7 +79,7 @@ NUXTJS provide the vue for this application, node/express provide the backend lo
 PWA is implemented using the help of [Nuxt PWA](https://pwa.nuxtjs.org/) which uses [workbox](https://developers.google.com/web/tools/workbox/)
 :::
 
-### 2.3 Assumptions
+<!-- ### 2.3 Assumptions  -->
 
 <!-- List any assumed factors that could possibly affect the requirements stated in the SRS -->
 
@@ -215,19 +215,24 @@ and we use numerical level based authendication for authoriation
 ### Login modules
 this module performs the login Authendication & authorization part
 the authendication is based on the user name or the user email and the authorization is based on the numaric which are as 0, 1, 2 these donot define the priority of the employe but the roll which they play
+
 - 0 - ADMIN
 - 1 - HR
-- 2 - ADMIN-2
+- 2 - SALES
+- 3 - product modules
 
 ### ADMIN
 - they can create, edit, update the employe skills and employe projects
 - can post an request to the hr for an employe with the mentioned skills
-### 1-HR
+### HR
 - can view the required employe for the task
 - can asign employe with the appropreate skillset
 ### SALES
 - they can create and edit the Project
 - view the product status
+### PRODUCTS
+- it countains the list of products their state and their description
+- the SALES can perform create and edit functanalities to the products
 
 
 ## 5.4 Error handling module
@@ -236,7 +241,7 @@ the authendication is based on the user name or the user email and the authoriza
 error handeling is done through the following manner
 first if we detect any error we mention what kind of error it is and use our custome error hander class called ErrHandle to create an objet and throw it. and our error handeler function will catch it and send it to the client.
 
-```js
+<!-- ```js
 // this would be our Error Class
 class ErrHandle {
     private status;
@@ -264,18 +269,8 @@ const MyFunc = () => {
         throw(err);
     }
 }
-```
+``` -->
 
-## 5.6	File handler module
-the only file which is being handeled by us curently is the image files so we use multer for it and accept only .png, .jpg, .jpeg formate files
-
-
-
-
-<!-- 5.1	System Feature 1
-5.2	System Feature 2
-…
-5.N	System Feature N	 -->
 
 
 
